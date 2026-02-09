@@ -1,0 +1,90 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>打字法 - 每两字删一字</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="brand">
+          <div class="eyebrow">Typing Disruptor</div>
+          <h1>每两字删一字</h1>
+          <p>
+            这是一个网页版原型：只接受中文与中文标点。每输入两个字，系统会自动删除前一个字。
+          </p>
+        </div>
+        <div class="rule-card">
+          <div class="rule-title">规则速览</div>
+          <ul>
+            <li>第 2、4、6... 个字触发删除</li>
+            <li>标点也算一个字</li>
+            <li>退格删除“最后输入的一个字”</li>
+          </ul>
+        </div>
+      </header>
+
+      <main class="grid">
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">输入区</div>
+              <div class="panel-sub">点击下方区域开始输入</div>
+            </div>
+            <div class="status" id="status">准备就绪</div>
+          </div>
+
+          <div class="editor" id="editor">
+            <div
+              class="display"
+              id="display"
+              data-placeholder="在这里输入中文..."
+              aria-live="polite"
+            ></div>
+            <input
+              id="capture"
+              class="capture"
+              type="text"
+              autocomplete="off"
+              autocapitalize="off"
+              spellcheck="false"
+              inputmode="text"
+              aria-label="中文输入"
+            />
+          </div>
+
+          <div class="toolbar">
+            <button class="btn primary" id="resetBtn">清空</button>
+            <button class="btn ghost" id="copyBtn">复制结果</button>
+            <div class="hint" id="hint">只支持中文和中文标点。粘贴会被忽略。</div>
+          </div>
+        </section>
+
+        <section class="stats">
+          <div class="stat">
+            <div class="label">已输入字数</div>
+            <div class="value" id="rawCount">0</div>
+          </div>
+          <div class="stat">
+            <div class="label">当前输出字数</div>
+            <div class="value" id="outCount">0</div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-title">输出结果</div>
+              <div class="panel-sub">可直接复制粘贴</div>
+            </div>
+          </div>
+          <textarea id="result" class="result" readonly></textarea>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

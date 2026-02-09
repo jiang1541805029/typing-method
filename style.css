@@ -1,0 +1,248 @@
+﻿@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&family=ZCOOL+QingKe+HuangYou&display=swap");
+
+:root {
+  --bg: #f4efe6;
+  --ink: #2f2a25;
+  --muted: #6a6259;
+  --card: #fff7ed;
+  --accent: #d1603d;
+  --accent-2: #1f7a8c;
+  --shadow: rgba(26, 16, 6, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Noto Sans SC", "Segoe UI", sans-serif;
+  color: var(--ink);
+  background: radial-gradient(circle at top, #fff6ea 0%, #efe0cc 42%, #e6d2bb 100%);
+  min-height: 100vh;
+}
+
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 22px 60px;
+  animation: fadeIn 0.6s ease;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 0.5fr);
+  gap: 20px;
+  align-items: start;
+  margin-bottom: 28px;
+}
+
+.brand h1 {
+  font-family: "ZCOOL QingKe HuangYou", "Noto Sans SC", sans-serif;
+  font-size: 42px;
+  margin: 6px 0 10px;
+  letter-spacing: 2px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  padding: 6px 12px;
+  border-radius: 999px;
+  background: #f2e1cc;
+  color: #5b4b3c;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.brand p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.7;
+  font-size: 15px;
+}
+
+.rule-card {
+  background: var(--card);
+  padding: 16px 18px;
+  border-radius: 16px;
+  box-shadow: 0 18px 40px -28px var(--shadow);
+}
+
+.rule-title {
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.rule-card ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  gap: 18px;
+}
+
+.panel {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px -28px var(--shadow);
+}
+
+.panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.panel-title {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.panel-sub {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.status {
+  background: #efe1cf;
+  color: #5b4636;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.editor {
+  position: relative;
+  min-height: 180px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #f7e2c8, #f2d6b7);
+  padding: 18px;
+  box-shadow: inset 0 0 0 1px rgba(120, 85, 55, 0.25);
+}
+
+.editor:focus-within {
+  box-shadow: inset 0 0 0 2px rgba(210, 96, 61, 0.55);
+}
+
+.display {
+  font-size: 20px;
+  line-height: 1.8;
+  min-height: 140px;
+  white-space: pre-wrap;
+}
+
+.display:empty::before {
+  content: attr(data-placeholder);
+  color: #9c8c7e;
+}
+
+.capture {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border: none;
+  background: transparent;
+  color: transparent;
+  caret-color: transparent;
+}
+
+.toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-top: 14px;
+}
+
+.btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  background: #f0e1cf;
+  color: #5b4636;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn.primary {
+  background: linear-gradient(135deg, #d76a4d, #c25034);
+  color: #fff6ee;
+}
+
+.btn.ghost {
+  background: transparent;
+  border: 1px solid #d5bea4;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px -16px rgba(0, 0, 0, 0.35);
+}
+
+.hint {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.stat {
+  background: #f8ecdd;
+  border-radius: 14px;
+  padding: 14px 16px;
+  box-shadow: 0 12px 28px -24px var(--shadow);
+}
+
+.stat .label {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.stat .value {
+  margin-top: 6px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.result {
+  width: 100%;
+  min-height: 140px;
+  border-radius: 12px;
+  border: 1px solid #d5bea4;
+  padding: 12px;
+  font-size: 16px;
+  background: #fffaf3;
+  resize: vertical;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 860px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+}
